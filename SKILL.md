@@ -79,6 +79,7 @@ Introduce every technical term before using it. Pair abstraction with one concre
 
 - Use [assets/html-blueprint.html](assets/html-blueprint.html) as a component and styling reference; adapt the structure to the topic rather than filling it mechanically.
 - Match the user's language. On first use, include the standard English term when it improves transfer to literature or industry discourse.
+- Keep the hero `<h1>` short and label-like, not sentence-like: no more than 12 CJK characters (excluding punctuation and spaces) or 8 words in space-delimited languages. Move the explanatory thesis into the lede below it.
 - Create a single standalone `.html` file with inline CSS and minimal inline JavaScript. Do not require a build step, CDN, external font, or remote image to understand the page.
 - Make it responsive and accessible: semantic landmarks, visible focus states, high contrast, reduced-motion support, keyboard-safe controls, useful link text, and readable mobile layout.
 - Meet the selected mode's content, source, and visual budgets. Choose information-bearing visuals for the topic, not decoration:
@@ -91,6 +92,7 @@ Introduce every technical term before using it. Pair abstraction with one concre
 - Prefer HTML/CSS diagrams and inline SVG with labels. Every visual must have a caption or adjacent explanation stating what to notice.
 - Wrap every wide table, timeline, or diagram in an explicitly scrollable container and make its scrollability visually discoverable on narrow screens. Never let a wide visual force body-level horizontal scrolling.
 - Add a sticky section navigator, a reading-progress indicator, a “legend/how to read” block, and print styles.
+- Separate every main chapter with a clearly visible full-width rule. Use a darker rule around 3 px rather than a faint 1 px hairline.
 - Distinguish **foundation**, **current state**, **frontier**, **debate**, and **inference** with consistent visual labels.
 - Cite claims near where they appear with numbered links. Require at least one direct citation or a clearly labeled multi-source inference for every current-state, frontier, debate, forecast, and quantitative card. End with a categorized source library containing title, publisher/author, year/date, source type, perspective, and direct URL.
 - End with “What you can now explain,” “What still requires practice,” a short self-test with answers, and an AI-assisted 2-hour / 2-day / 7-day capability sprint:
