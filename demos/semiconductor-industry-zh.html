@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:,">
+  <title>芯片行业全景图｜从晶体管、良率到全球产业系统</title>
+  <style>
+    :root{--ink:#162033;--muted:#5e6979;--paper:#f4f1e8;--card:#fffdf7;--card2:#ece9df;--line:#d6d0c3;--teal:#075f62;--coral:#cf593d;--gold:#9d751b;--blue:#276da0;--violet:#76539b;--shadow:0 14px 36px rgb(22 32 51/.09);--radius:18px;font-family:ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+    @media(prefers-color-scheme:dark){:root{--ink:#edf1f4;--muted:#b1bcc9;--paper:#10161d;--card:#18212a;--card2:#202a34;--line:#35424e;--teal:#63c9c5;--coral:#ff967c;--gold:#e8c365;--blue:#78bceb;--violet:#c3a4e9;--shadow:none}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);line-height:1.68;overflow-wrap:break-word}a{color:var(--teal);text-underline-offset:.2em}a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.progress{position:fixed;inset:0 auto auto 0;width:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--coral),var(--gold));z-index:50}.shell{width:min(1720px,calc(100% - clamp(32px,4vw,96px)));margin:auto}.hero{padding:74px 0 38px}.kicker,.eyebrow{font-size:.74rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}.kicker{color:var(--coral)}h1{font-size:clamp(2.65rem,7.2vw,6.35rem);line-height:.96;letter-spacing:-.065em;max-width:18ch;margin:.16em 0}h2{font-size:clamp(1.75rem,3.6vw,2.8rem);line-height:1.1;letter-spacing:-.04em;margin:.2em 0 .72em}h3{line-height:1.22;margin:.15em 0 .55em}.lede{font-size:1.17rem;max-width:70ch;color:var(--muted)}.chips,.legend{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.chip,.legend span,.badge{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--card);padding:5px 10px;font-size:.78rem;font-weight:850}.legend span{border-radius:7px}.foundation{border-left:4px solid var(--teal)!important}.current{border-left:4px solid var(--blue)!important}.frontier{border-left:4px solid var(--gold)!important}.debate{border-left:4px solid var(--coral)!important}.inference{border-style:dashed!important}.scenario{border-left:4px solid var(--violet)!important}nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(12px);border-block:1px solid var(--line);overflow:auto;white-space:nowrap}nav .shell{display:flex;gap:20px;padding:11px 0}nav a{text-decoration:none;font-size:.87rem;font-weight:850;color:var(--muted)}nav a[aria-current="true"]{color:var(--coral)}main{padding:26px 0 90px}section{padding:50px 0;border-bottom:3px solid color-mix(in srgb,var(--ink) 34%,var(--line));scroll-margin-top:64px}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.card{grid-column:span 4;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:21px;box-shadow:var(--shadow)}.wide{grid-column:span 8}.half{grid-column:span 6}.full{grid-column:1/-1}.number{font-size:clamp(2rem,4vw,3rem);font-weight:950;line-height:1;color:var(--teal);letter-spacing:-.04em}.small{font-size:.88rem;color:var(--muted)}.callout{font-size:1.12rem;font-weight:760;max-width:76ch}.takeaway{margin:20px 0;padding:15px 19px;border-left:6px solid var(--coral);border-radius:0 var(--radius) var(--radius) 0;background:color-mix(in srgb,var(--coral) 8%,var(--card))}.route{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:18px;border:1px solid var(--line);background:var(--card);border-radius:var(--radius)}.route strong{color:var(--coral)}.flow{display:flex;align-items:stretch;gap:9px;min-width:920px;padding:12px 2px}.node{min-width:145px;flex:1;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:14px}.node strong{display:block;color:var(--teal)}.arrow{display:grid;place-items:center;color:var(--coral);font-size:1.35rem}.scrollbox{max-width:100%;overflow:auto;border:1px solid var(--line);border-radius:15px;background:var(--card);position:relative}.scrollbox>.flow{border:0}.scroll-hint{display:none;margin:5px 0;color:var(--muted);font-size:.78rem}.stack{display:grid;gap:8px}.layer{display:grid;grid-template-columns:145px 1fr auto;gap:14px;align-items:center;padding:12px 15px;border:1px solid var(--line);border-radius:13px;background:var(--card)}.layer b{color:var(--teal)}.layer em{font-size:.77rem;color:var(--muted);font-style:normal}.matrix{width:100%;min-width:800px;border-collapse:collapse;background:var(--card);font-size:.9rem}.matrix th,.matrix td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line)}.matrix th{font-size:.78rem;color:var(--muted);letter-spacing:.04em}.timeline{display:grid;grid-template-columns:128px 1fr;gap:0 20px}.time{font-weight:900;color:var(--teal)}.event{position:relative;border-left:2px solid var(--line);padding:0 0 25px 22px}.event:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--coral);left:-6px;top:.55em}.loop{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;min-width:780px}.loop .step{padding:16px;border-radius:15px;background:var(--card);border:1px solid var(--line);position:relative}.loop .step:not(:last-child):after{content:"→";position:absolute;right:-12px;top:42%;z-index:2;color:var(--coral);font-weight:900}.metric{display:flex;align-items:baseline;gap:9px}.metric b{font-size:2.1rem;color:var(--teal);letter-spacing:-.05em}.meter{height:10px;border-radius:10px;background:var(--card2);overflow:hidden;margin:8px 0}.meter span{display:block;height:100%;background:linear-gradient(90deg,var(--teal),var(--gold))}.calc{display:grid;grid-template-columns:1fr 1fr;gap:18px}.controls{display:grid;gap:14px}.control label{display:flex;justify-content:space-between;font-weight:800}.control input{width:100%;accent-color:var(--teal)}.calc-out{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.result{padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--card2)}.result b{display:block;font-size:1.45rem;color:var(--teal)}.status-ladder{display:grid;grid-template-columns:repeat(7,minmax(118px,1fr));gap:8px;min-width:870px}.status-ladder div{padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--card);text-align:center}.status-ladder b{display:block;color:var(--teal);font-size:.85rem}.scenario-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.scenario-card{padding:18px;border:1px solid var(--line);border-radius:15px;background:var(--card)}details{border-top:1px solid var(--line);padding:14px 0}summary{font-weight:850;cursor:pointer}.check li,.source-list li{margin:.55em 0}.source-list{padding-left:1.35em}.source-list span{display:block;color:var(--muted);font-size:.84rem}.source-group{margin-top:28px}.source-group h3{color:var(--coral)}sup a{text-decoration:none}.pill-row{display:flex;gap:7px;flex-wrap:wrap}.pill-row span{font-size:.78rem;padding:4px 8px;border:1px solid var(--line);border-radius:8px;background:var(--card2)}footer{padding:40px 0 72px;color:var(--muted)}
+    @media(max-width:800px){.card,.wide,.half{grid-column:1/-1}.hero{padding-top:48px}.route{grid-template-columns:1fr}.layer{grid-template-columns:1fr}.layer em{justify-self:start}.timeline{grid-template-columns:88px 1fr}.calc{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr}.scroll-hint{display:block}h1{max-width:12ch}}
+    @media(max-width:430px){.calc-out{grid-template-columns:1fr}.hero{padding-bottom:26px}.card{padding:17px}section{padding:38px 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+    @media print{nav,.progress,.controls,.scroll-hint{display:none}.shell{width:100%}.card{box-shadow:none;break-inside:avoid}.scrollbox{overflow:visible}.matrix,.flow,.loop,.status-ladder{min-width:0}.flow{flex-wrap:wrap}.arrow{display:none}a{color:inherit}.hero{padding-top:0}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="hero shell">
+    <p class="kicker">Domain Atlas · Technology–industry 主路线 · Academic 次镜头</p>
+    <h1>芯片如何变成全球产业价值</h1>
+    <p class="lede">这张图谱从晶体管与工作负载出发，穿过设计、制造、良率、封装、利润池和产业周期，最后落到标准、资源与地缘约束。目标不是背公司名单，而是让你能判断：瓶颈在哪里、价值为何迁移、新闻中的“突破”到底处于什么状态。</p>
+    <div class="chips"><span class="chip">受众 · 理工科本科、零行业经验</span><span class="chip">证据核验至 · 2026-08-08</span><span class="chip">分类信心 · 高</span><span class="chip">阅读 · 约 45 分钟</span></div>
+    <div class="legend" aria-label="证据标签图例"><span class="foundation">基础共识</span><span class="current">当前状态</span><span class="frontier">前沿</span><span class="debate">争议</span><span class="inference">多源推断</span><span class="scenario">条件情景</span></div>
+  </header>
+  <nav aria-label="章节导航"><div class="shell"><a href="#orient">定位</a><a href="#foundations">基础</a><a href="#system">产业栈</a><a href="#make">设计制造</a><a href="#economics">商业</a><a href="#cycle">周期</a><a href="#history">转折</a><a href="#current">2026</a><a href="#constraints">约束</a><a href="#expert">判断</a><a href="#path">路径</a><a href="#sources">来源</a></div></nav>
+  <main class="shell">
+    <section id="orient">
+      <p class="kicker">01 · 60 秒定位</p><h2>先建立一个总模型：芯片行业出售的是受约束的系统能力</h2>
+      <div class="route"><strong>范围与边界</strong><div><b>纳入：</b>全球芯片设计、EDA/IP、制造、设备材料、封装测试、产品市场、商业模式、标准、政策和2026年前沿。<br><b>不纳入：</b>逐家公司估值、投资建议、完整器件数学、每一种工艺配方与军用芯片细节。物理是解释约束的桥梁，产业系统是叙事主轴。</div></div>
+      <p class="callout">一个芯片方案只有同时跨过五道门才有产业价值：科学可行 → 工程可重复 → 制造有良率 → 客户有收益 → 供应与合规可持续。</p>
+      <p class="scroll-hint">横向滑动查看完整系统 →</p>
+      <figure><div class="scrollbox" role="region" aria-label="芯片产业主流程，可横向滚动" tabindex="0"><div class="flow">
+        <div class="node"><strong>工作负载</strong>AI、手机、汽车、工业控制定义时延、能效、可靠性</div><div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><strong>架构与软件</strong>把任务拆成计算、存储、互连与专用加速</div><div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><strong>设计实现</strong>规格→RTL/电路→验证→版图→签核</div><div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><strong>晶圆制造</strong>材料、光刻、沉积、刻蚀、量测构造器件</div><div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><strong>封装测试</strong>连接裸片、供电散热、筛错与可靠性认证</div><div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><strong>系统价值</strong>实际吞吐、总拥有成本、上市时间与供应保障</div>
+      </div></div><figcaption class="small">要点：客户购买的不是“纳米数”，而是特定工作负载下的系统结果；任何一层都可能成为新瓶颈。</figcaption></figure>
+      <div class="grid">
+        <article class="card current"><div class="number">$795.6B</div><h3>2025 年最终销售额</h3><p>WSTS 在 2026-03-06 用最终四季度数据将 2025 年全球销售定为 7956 亿美元，同比增长 26.2%。这是芯片销售，不是下游系统与软件价值。<sup><a href="#s1">[1]</a></sup></p></article>
+        <article class="card foundation"><div class="number">3 + N</div><h3>三段生产，多层使能</h3><p>设计、晶圆制造、封装测试是主干；EDA/IP、设备、材料、人才、能源和标准是使能层。OECD 强调这是一条高度分段又相互依赖的全球链。<sup><a href="#s2">[2]</a></sup></p></article>
+        <article class="card inference"><div class="number">0</div><h3>不存在“全能经济体”</h3><p>没有一个经济体覆盖所有步骤并生产全部芯片类型。韧性不是追求零依赖，而是识别不可替代点、建立第二来源并接受冗余成本。<sup><a href="#s2">[2]</a></sup></p></article>
+      </div>
+    </section>
+
+    <section id="foundations">
+      <p class="kicker">02 · 10 分钟基础</p><h2>八个概念，足以进入行业对话</h2>
+      <div class="grid">
+        <article class="card foundation"><h3>晶体管 Transistor</h3><p>用电压控制电流的器件。数字电路把它组织成开关网络；模拟电路利用连续响应处理传感、射频与电源信号。</p></article>
+        <article class="card foundation"><h3>工艺节点 Process Node</h3><p>3 nm、2 nm 等是工艺代际标签，不再等于某个唯一几何尺寸。比较节点必须回到性能、功耗、面积、成本、良率与成熟状态。</p></article>
+        <article class="card foundation"><h3>晶圆 / 裸片 Wafer / Die</h3><p>圆形晶圆上重复制造许多矩形裸片。裸片越大，可切数量越少，随机缺陷命中概率通常也越高。</p></article>
+        <article class="card foundation"><h3>良率 Yield</h3><p>满足规格的合格裸片比例。它把纳米级制造能力翻译成单位成本和交付能力；“能流片”远不等于“能经济量产”。</p></article>
+        <article class="card foundation"><h3>PPA + C</h3><p>Performance、Power、Area 加 Cost：性能、功耗、面积、成本共同优化；在汽车、工业等场景还要显式加入可靠性和寿命。</p></article>
+        <article class="card foundation"><h3>ISA ≠ 微架构</h3><p>指令集是软件可见接口；同一 ISA 可以有顺序、乱序、低功耗或高性能实现。RISC-V 规范明确将 ISA 与具体实现方式分离。<sup><a href="#s4">[4]</a></sup></p></article>
+        <article class="card foundation"><h3>Foundry / Fabless / IDM / OSAT</h3><p>分别侧重受托制造、无厂设计、设计制造一体和外包封装测试。它们是商业原型，不是互斥身份。</p></article>
+        <article class="card foundation"><h3>Chiplet</h3><p>把不同功能、不同工艺的裸片在封装内组合。收益是模块复用与系统扩展；代价是互连、热、测试、良率和责任边界更复杂。</p></article>
+      </div>
+      <h3 style="margin-top:28px">抽象栈：不要把 CPU、Arm、3 nm 和先进封装放在同一层比较</h3>
+      <div class="stack" role="list" aria-label="芯片技术抽象栈">
+        <div class="layer" role="listitem"><b>应用 / 工作负载</b><span>训练、推理、数据库、图形、控制、射频、电源转换</span><em>比较：结果、时延、能效</em></div>
+        <div class="layer" role="listitem"><b>软件与算法</b><span>模型、编译器、库、调度、精度与稀疏性</span><em>决定利用率</em></div>
+        <div class="layer" role="listitem"><b>ISA / 接口</b><span>x86、Arm、RISC-V；软件看见的契约，不是性能结论</span><em>决定兼容边界</em></div>
+        <div class="layer" role="listitem"><b>微架构 / SoC</b><span>流水线、缓存、核心、NPU、I/O、内存控制器与互连</span><em>决定数据流</em></div>
+        <div class="layer" role="listitem"><b>电路 / 版图</b><span>逻辑门、SRAM、模拟模块、时钟、供电网络、物理实现</span><em>闭合 PPA</em></div>
+        <div class="layer" role="listitem"><b>器件 / 工艺 / 封装</b><span>晶体管、互连、材料、光刻、3D 堆叠、散热</span><em>物理边界</em></div>
+      </div>
+      <div class="takeaway"><strong>性能阅读法：</strong>看到“峰值 TOPS/TFLOPS”时，先问工作负载、数据类型、准确率、批量、时延边界、软件版本、系统规模与功耗。MLPerf 的意义正是用规则固定其中一部分变量。<sup><a href="#s6">[6]</a></sup></div>
+    </section>
+
+    <section id="system">
+      <p class="kicker">03 · 30 分钟系统图</p><h2>价值链不是流水线，而是反复迭代的能力网络</h2>
+      <p class="scroll-hint">横向滑动查看完整价值链 →</p>
+      <div class="scrollbox" role="region" aria-label="半导体价值链，可横向滚动" tabindex="0"><table class="matrix"><thead><tr><th>环节</th><th>交付物</th><th>关键稀缺能力</th><th>主要客户 / 收费方式</th><th>专家关注指标</th></tr></thead><tbody>
+        <tr><td>EDA / IP</td><td>设计软件、验证工具、可复用内核与接口</td><td>复杂工作流、认证历史、生态锁定</td><td>设计公司；订阅、授权、版税</td><td>续约、渗透率、设计启动、研发强度</td></tr>
+        <tr><td>设备 / 材料</td><td>光刻、刻蚀、沉积、量测设备；硅片、气体、光刻胶</td><td>极限精度、长期共研、安装基础</td><td>晶圆厂；设备、服务、耗材</td><td>订单、积压、装机、服务收入、客户集中</td></tr>
+        <tr><td>Fabless / 系统自研</td><td>产品定义、架构、版图与软件栈</td><td>人才、IP、客户、软件生态、上市速度</td><td>设备商、云厂、终端；芯片或系统销售</td><td>设计胜出、产品组合、毛利、研发效率</td></tr>
+        <tr><td>Foundry / IDM</td><td>合格晶圆或自有芯片</td><td>工艺平台、良率、规模、客户信任</td><td>设计公司或内部产品线；晶圆/产品收入</td><td>利用率、良率、节点组合、资本强度</td></tr>
+        <tr><td>OSAT / 先进封装</td><td>合格封装器件、多裸片系统</td><td>互连、测试、热、供应协同</td><td>设计公司、IDM；封装测试服务</td><td>先进封装占比、良率、利用率、客户集中</td></tr>
+        <tr><td>系统 / 渠道</td><td>服务器、手机、汽车电子、工业设备</td><td>软硬协同、认证、总拥有成本</td><td>企业或消费者；设备、服务、云使用</td><td>实际利用率、能耗、可靠性、部署 ROI</td></tr>
+      </tbody></table></div>
+      <div class="grid" style="margin-top:18px">
+        <article class="card"><h3>利润池 ≠ 资本开支</h3><p>设计可凭可复制 IP 获得高附加值；制造也能凭工艺与规模获得高利润；传统封测附加值较低，但 AI 先进封装可能改变局部议价力。OECD 的聚合估计只能作结构线索，不能机械等同于利润率。<sup><a href="#s23">[23]</a></sup></p></article>
+        <article class="card"><h3>护城河通常跨层</h3><p>架构性能、软件工具链、制造可得性、客户认证和供应保障会共同提高切换成本。模拟/嵌入式芯片的产品寿命与渠道，往往比最新节点更重要。<sup><a href="#s24">[24]</a></sup></p></article>
+        <article class="card"><h3>公司是坐标，不是课程表</h3><p>理解 TSMC、ASML、NVIDIA、Arm、Micron 或 TI 的价值，先问它控制了哪种稀缺接口或能力，再看这种稀缺是否能跨周期持续。</p></article>
+      </div>
+    </section>
+
+    <section id="make">
+      <p class="kicker">04 · 设计、制造与良率</p><h2>芯片不是“画好再印”，而是多重约束反复闭合</h2>
+      <h3>从需求到版图：真实流程有大量回环</h3>
+      <p class="scroll-hint">横向滑动查看设计流程 →</p>
+      <figure><div class="scrollbox" role="region" aria-label="RTL 到 GDS 设计流程，可横向滚动" tabindex="0"><div class="flow">
+        <div class="node"><strong>规格 / 架构</strong>工作负载、接口、PPA、成本与可靠性目标</div><div class="arrow">→</div><div class="node"><strong>RTL / 电路</strong>数字逻辑、模拟模块、存储与 IP 集成</div><div class="arrow">→</div><div class="node"><strong>验证</strong>仿真、形式验证、覆盖率、DFT；缺陷越晚越贵</div><div class="arrow">→</div><div class="node"><strong>物理实现</strong>综合、floorplan、放置、时钟树、布线</div><div class="arrow">→</div><div class="node"><strong>签核</strong>时序、功耗、DRC、LVS、寄生、可靠性</div><div class="arrow">↺</div><div class="node"><strong>Tape-out</strong>交付制造数据；不是量产完成</div>
+      </div></div><figcaption class="small">OpenROAD 的公开数字流程展示了综合、布局布线和版图生成主干；商业流程还包括大量专有签核、模拟/RF、存储和代工厂规则。<sup><a href="#s5">[5]</a></sup></figcaption></figure>
+      <h3 style="margin-top:28px">晶圆制造：每一层都是工艺窗口与量测反馈</h3>
+      <p class="scroll-hint">横向滑动查看制造循环 →</p>
+      <figure><div class="scrollbox" role="region" aria-label="晶圆制造循环，可横向滚动" tabindex="0"><div class="flow">
+        <div class="node"><strong>沉积 / 生长</strong>铺设半导体、导体或绝缘薄膜</div><div class="arrow">→</div><div class="node"><strong>涂胶 / 光刻</strong>把掩模图形转移到光刻胶</div><div class="arrow">→</div><div class="node"><strong>显影 / 刻蚀</strong>选择性保留或去除材料</div><div class="arrow">→</div><div class="node"><strong>注入 / 退火</strong>调节局部电学性质和晶格</div><div class="arrow">→</div><div class="node"><strong>平坦化 / 互连</strong>形成可继续堆叠的多层结构</div><div class="arrow">↺</div><div class="node"><strong>量测 / SPC</strong>检查尺寸、套刻、缺陷并反馈修正</div>
+      </div></div><figcaption class="small">现代芯片由数百道步骤逐层构造，光刻关键但不是唯一瓶颈；材料界面、刻蚀、沉积、量测和过程控制共同决定结果。<sup><a href="#s3">[3]</a></sup></figcaption></figure>
+      <article class="card full inference" style="margin-top:22px">
+        <h3>交互算例：为什么“大裸片 + 缺陷”会迅速推高成本？</h3>
+        <p class="small">教学模型：300 mm 晶圆；可切裸片数采用几何近似，随机缺陷良率采用简化 Poisson 模型 Y = e<sup>−A·D₀</sup>。不含边缘良率、参数性失效、测试分档、掩模、研发、利用率和报废，因此不能作为报价。</p>
+        <div class="calc">
+          <div class="controls">
+            <div class="control"><label for="dieArea">裸片面积 <output id="dieAreaOut">600 mm²</output></label><input id="dieArea" type="range" min="50" max="850" step="10" value="600"></div>
+            <div class="control"><label for="defects">缺陷密度 <output id="defectsOut">0.08 /cm²</output></label><input id="defects" type="range" min="0.02" max="0.35" step="0.01" value="0.08"></div>
+            <div class="control"><label for="waferCost">晶圆加工成本 <output id="waferCostOut">$18,000</output></label><input id="waferCost" type="range" min="3000" max="30000" step="500" value="18000"></div>
+          </div>
+          <div class="calc-out" aria-live="polite"><div class="result"><span>理论可切裸片</span><b id="diesOut">—</b></div><div class="result"><span>模型良率</span><b id="yieldOut">—</b></div><div class="result"><span>合格裸片</span><b id="goodOut">—</b></div><div class="result"><span>仅晶圆成本 / 合格裸片</span><b id="costOut">—</b></div></div>
+        </div>
+        <div class="takeaway"><strong>真正要看：</strong>面积影响一片晶圆能切多少颗，缺陷密度影响其中多少颗合格；两者相乘形成非线性成本压力。Chiplet 的一个经济动机，就是避免把所有功能塞进一颗超大裸片，但它会新增封装与测试成本。</div>
+      </article>
+      <div class="grid" style="margin-top:18px"><article class="card"><h3>测试 ≠ 可靠性</h3><p>晶圆测试和最终测试寻找当下故障；资格认证与可靠性监控研究温度、时间、机械和电气应力下的长期失效。先进封装还需要层间对准、热表征和 3D 测试访问。<sup><a href="#s7">[7]</a></sup></p></article><article class="card"><h3>量产是状态序列</h3><p>研究演示、送样、风险生产、进入生产、高量产、稳定良率和广泛部署不是同义词。公开“good yield”若没有分母，也不能跨厂比较。</p></article><article class="card"><h3>封装成为架构</h3><p>Chiplet 把系统扩展移到封装内；UCIe 2.0/3.0 将互连、管理、测试和 3D 支持纳入开放规范，但规范发布不等于多供应商即插即用。<sup><a href="#s8">[8]</a></sup></p></article></div>
+    </section>
+
+    <section id="economics">
+      <p class="kicker">05 · 产品、商业模式与指标</p><h2>“芯片市场”其实是多种经济规律同时运行</h2>
+      <p class="scroll-hint">横向滑动查看产品差异 →</p>
+      <div class="scrollbox" role="region" aria-label="芯片产品族比较，可横向滚动" tabindex="0"><table class="matrix"><thead><tr><th>产品族</th><th>客户购买什么</th><th>关键约束</th><th>生命周期 / 周期</th><th>不能只看</th></tr></thead><tbody>
+        <tr><td>CPU / GPU / AI ASIC</td><td>通用性、吞吐、时延、软件生态</td><td>数据移动、内存带宽、功率与封装</td><td>迭代快；数据中心需求集中</td><td>峰值算力、节点名</td></tr>
+        <tr><td>DRAM / NAND / HBM</td><td>容量、带宽、延迟、耐久与价格</td><td>供需、良率、堆叠、封装</td><td>标准化高，价格周期强；HBM更定制</td><td>只看 bit 出货、不看价格</td></tr>
+        <tr><td>模拟 / 混合信号</td><td>把真实信号准确转换和调理</td><td>噪声、精度、长期供货、客户认证</td><td>产品寿命长、品类碎片化</td><td>最新制程</td></tr>
+        <tr><td>功率器件</td><td>高效、安全地转换与控制能量</td><td>电压、电流、热、可靠性、材料</td><td>工业/汽车认证长；SiC/GaN成长</td><td>单一开关速度</td></tr>
+        <tr><td>MCU / 汽车 / 工业</td><td>实时控制、确定性、功能安全</td><td>嵌入式软件、认证、供货寿命</td><td>设计周期与服役周期长</td><td>跑分和晶体管密度</td></tr>
+      </tbody></table></div>
+      <div class="grid" style="margin-top:18px">
+        <article class="card current"><h3>Foundry：重资产也能高利润</h3><p>TSMC 2025 年毛利率 59.9%、营业利润率 50.8%，7 nm 及更先进技术占晶圆收入 74%；这说明工艺、规模、客户组合和利用率能形成制造端利润池。它只是单家公司事实，不代表所有晶圆厂。<sup><a href="#s9">[9]</a></sup></p></article>
+        <article class="card current"><h3>设备：稀缺工具 + 装机服务</h3><p>ASML 2025 年销售 327 亿欧元、毛利率 52.8%，服务与现场选件收入 82 亿欧元。专家不仅看新机出货，也看装机基础、升级与服务。<sup><a href="#s10">[10]</a></sup></p></article>
+        <article class="card foundation"><h3>固定成本放大波动</h3><p>晶圆厂的大量成本不会随短期需求同步下降；低利用率会快速侵蚀单位经济。相反，良率和利用率爬升可把同一产能变成更多合格产品。<sup><a href="#s24">[24]</a></sup></p></article>
+      </div>
+      <div class="takeaway"><strong>企业比较最小集合：</strong>Fabless 看设计胜出、产品组合、研发效率和生态；Foundry/IDM 看利用率、良率、节点/产品组合、折旧与资本强度；设备商看订单、装机、服务和客户资本开支；存储看 bit 增长、价格、库存和供给纪律。</div>
+    </section>
+
+    <section id="cycle">
+      <p class="kicker">06 · 周期机制</p><h2>需求变化很小，为什么利润会大起大落？</h2>
+      <p class="scroll-hint">横向滑动查看周期反馈 →</p>
+      <figure><div class="scrollbox" role="region" aria-label="半导体周期反馈图，可横向滚动" tabindex="0"><div class="loop">
+        <div class="step"><b>1 · 需求上升</b><br>交期拉长、客户担心断供，订单增长可能快于真实消耗。</div>
+        <div class="step"><b>2 · 库存与重复下单</b><br>供应链多层各自加安全库存，信号被放大。</div>
+        <div class="step"><b>3 · 扩产滞后</b><br>建厂、装机、良率爬坡需要时间；供给在高价后才到达。</div>
+        <div class="step"><b>4 · 去库存 / 低利用率</b><br>真实需求放缓后订单骤减，固定成本使利润降幅大于收入。</div>
+      </div></div><figcaption class="small">这是库存—交期—资本开支的反馈系统，不是一条固定周期钟。TI 的年报把库存构建/消化和产能增加滞后列为行业周期核心。<sup><a href="#s24">[24]</a></sup></figcaption></figure>
+      <div class="grid">
+        <article class="card current"><h3>2025 并非“全行业同步繁荣”</h3><p>WSTS 最终数据中，计算应用同比增长超过 60%，工业约增长 5%，分立器件全年仍略为负增长。总销售大涨主要由逻辑、存储和 AI 相关计算拉动。<sup><a href="#s1">[1]</a></sup></p></article>
+        <article class="card"><h3>库存有三层</h3><p>分销商、系统客户和芯片供应商库存不是一回事。判断周期必须把终端 sell-through、渠道库存、订单取消、交期、利用率和价格放在一起。</p></article>
+        <article class="card"><h3>资本开支不是需求</h3><p>Capex 表示产能建设和设备采购；它可能验证长期信心，也可能在供给集中到达后加剧下行。要看投产时间、良率、客户认证与自由现金流。</p></article>
+      </div>
+    </section>
+
+    <section id="history">
+      <p class="kicker">07 · 关键转折</p><h2>每次突破都解除一个瓶颈，同时把约束推向下一层</h2>
+      <div class="timeline">
+        <div class="time">1947–1959</div><div class="event"><strong>晶体管、平面工艺与集成电路</strong><br>固态开关取代真空管，多个器件可在同一基底批量制造；新问题变成如何稳定扩大集成规模。</div>
+        <div class="time">1965–1970s</div><div class="event"><strong>缩放与微处理器平台</strong><br>晶体管数量与单位成本的长期趋势塑造产业预期；通用 CPU 让软件成为硬件价值的放大器。</div>
+        <div class="time">1980s–1990s</div><div class="event"><strong>EDA、Pure-play Foundry 与 Fabless</strong><br>设计复杂度与工厂资本强度推动专业化。TSMC 1987 年成立的纯代工模式成为关键制度拐点。<sup><a href="#s9">[9]</a></sup></div>
+        <div class="time">2000s</div><div class="event"><strong>Dennard 缩放结束、功耗墙与多核</strong><br>频率不再能低代价持续提高，架构并行、专用加速与能效成为核心。</div>
+        <div class="time">2010s</div><div class="event"><strong>FinFET、EUV 与移动/云</strong><br>器件走向三维，EUV 进入先进层，软件生态和大规模数据中心改变产品利润池。</div>
+        <div class="time">2020s</div><div class="event"><strong>GAA、背面供电、HBM、Chiplet 与 3D</strong><br>缩放从单裸片路径变成器件、互连、封装、存储、供电与冷却的协同工程。IRDS 路线图把 GAA 与背面供电视为延续缩放的重要路径。<sup><a href="#s19">[19]</a></sup></div>
+      </div>
+    </section>
+
+    <section id="current">
+      <p class="kicker">08 · 当前状态与前沿</p><h2>截至 2026-08-08：先进计算正在把瓶颈推向系统边界</h2>
+      <div class="grid">
+        <article class="card current"><h3>N2 已进入高量产</h3><p>TSMC 披露 N2 于 2025 年第四季度进入 high-volume manufacturing；N2P 与带 Super Power Rail 背面供电的 A16 目标为 2026 年下半年量产。前者是已发生状态，后者仍是公司目标。<sup><a href="#s9">[9]</a></sup></p></article>
+        <article class="card current"><h3>2 nm 已开始形成收入</h3><p>TSMC 2026 年第二季度报告显示 2 nm 占晶圆收入 3%，7 nm 及更先进占 77%；这把“进入生产”与“形成可见商业贡献”区分开。<sup><a href="#s11">[11]</a></sup></p></article>
+        <article class="card current"><h3>HBM4 从样品进入量产</h3><p>Micron 于 2026-03-16 称其 36GB 12 层 HBM4 已在一季度量产出货，厂商自报带宽超过 2.8 TB/s。它直接证明该产品状态，不证明全行业供需或跨厂商领先。<sup><a href="#s17">[17]</a></sup></p></article>
+        <article class="card current"><h3>UCIe 3.0 把速率推至 64 GT/s</h3><p>2025-08-05 发布的规范同时增加管理、节流与省电能力。标准在降低接口摩擦，但开放规范、互操作认证和大规模多供应商出货仍是三个阶段。<sup><a href="#s8">[8]</a></sup></p></article>
+        <article class="card frontier"><h3>High-NA：已交付，不等于普遍量产</h3><p>ASML 2026 年股东会材料称截至 2025 年底交付 8 套 High-NA、6 套运行，并以 2026 年底满足高量产要求为目标；客户导入指向 2027–2028。后两项是前瞻表述。<sup><a href="#s18">[18]</a></sup></p></article>
+        <article class="card inference"><h3>价值正在向“瓶颈组合”迁移</h3><p>当计算裸片不再是唯一约束，HBM、封装产能、互连、供电、冷却、网络和软件利用率会共同决定系统交付。利润池是否迁移，取决于瓶颈持续多久以及替代速度。此处为基于 HBM4 与 Chiplet/封装进展的综合推断。<sup><a href="#s17">[17]</a></sup><sup><a href="#s7">[7]</a></sup></p></article>
+      </div>
+      <div class="takeaway"><strong>前沿判断：</strong>GAA、背面供电、High-NA、混合键合、光互连和 3D 堆叠不是一场“谁替代谁”的单选题，而是不同层解决不同约束。最重要的问题是：收益在哪个工作负载兑现，代价转移到了哪里？</div>
+    </section>
+
+    <section id="constraints">
+      <p class="kicker">09 · 标准、政策、资源与地缘</p><h2>技术上可行，不等于能合规、规模化并跨境交付</h2>
+      <div class="grid">
+        <article class="card current"><div class="number">87%</div><h3>在产晶圆能力集中</h3><p>OECD 统计截至 2025 年 9 月，中国、中国台湾、韩国、日本和美国合计占全球在产晶圆制造能力 87%。晶圆月产能不含良率、裸片面积和客户认证，不能直接等同于可替代产量。<sup><a href="#s14">[14]</a></sup></p></article>
+        <article class="card current"><div class="number">24 + 3</div><h3>管制对象跨层扩展</h3><p>美国 BIS 2024-12-02 规则新增对 24 类制造设备、3 类软件工具及 HBM 的控制，并新增 140 个实体清单条目。该来源证明规则内容和政策目标，不独立证明最终效果。<sup><a href="#s12">[12]</a></sup></p></article>
+        <article class="card current"><div class="number">40</div><h3>项目要看里程碑</h3><p>GAO 报告称截至 2025 年 7 月，美国 CHIPS 项目覆盖 19 家公司、40 个项目和 309 亿美元直接资助；项目里程碑最长延伸到 2033 年。公告金额不是已投产能力。<sup><a href="#s13">[13]</a></sup></p></article>
+        <article class="card debate"><h3>水、电与基础设施</h3><p>NIST 环境评估同时写出：29 座美国设施 2021 年超纯水用量中位数为 42.5 亿加仑/年，以及 116 万加仑/日；两者算术上相差约 10 倍（前者折合约 1164 万/日）。因此这里只把它作为“百万至千万加仑/日”的量级信号，不把原文换算当作可靠精确值，也不外推到所有厂型。<sup><a href="#s15">[15]</a></sup></p></article>
+        <article class="card"><h3>含氟气体与危险化学品</h3><p>刻蚀、沉积腔体清洁等过程使用高全球变暖潜势含氟气体；EPA 还列出 HCl、HF、乙二醇醚、甲醇和二甲苯等主要有害空气污染物。<sup><a href="#s16">[16]</a></sup><sup><a href="#s26">[26]</a></sup></p></article>
+        <article class="card current"><h3>材料集中不会因建厂自动消失</h3><p>USGS 估计中国 2025 年占全球原生低纯度镓产量 99%；镓用于 GaAs/GaN 器件。该口径不等于所有高纯精炼品和可用晶圆供应。<sup><a href="#s20">[20]</a></sup></p></article>
+      </div>
+      <h3 style="margin-top:28px">四个情景，不做单一路径预测</h3>
+      <div class="scenario-grid">
+        <article class="scenario-card scenario"><h3>A · AI / 存储超级周期</h3><p><b>条件：</b>终端部署与回报持续，HBM和先进封装扩产仍落后需求。<br><b>领先指标：</b>实际销售、内存价格、封装交期、系统利用率与客户自由现金流。<sup><a href="#s1">[1]</a></sup><sup><a href="#s17">[17]</a></sup></p></article>
+        <article class="scenario-card scenario"><h3>B · 扩产后消化</h3><p><b>条件：</b>多个项目集中投产，而真实需求或客户认证落后。<br><b>领先指标：</b>planned→construction→production 转化、良率、利用率、库存与取消订单。<sup><a href="#s13">[13]</a></sup><sup><a href="#s14">[14]</a></sup></p></article>
+        <article class="scenario-card scenario"><h3>C · 区域化技术栈</h3><p><b>条件：</b>管制扩大、盟友规则趋同、规避与国产替代同步。<br><b>领先指标：</b>许可证、第三地贸易、设备安装、标准/工具链分化和合规成本。<sup><a href="#s12">[12]</a></sup><sup><a href="#s2">[2]</a></sup></p></article>
+        <article class="scenario-card scenario"><h3>D · 基础设施卡住扩产</h3><p><b>条件：</b>水、电、废水、人才和许可落后于厂房。<br><b>领先指标：</b>公用事业协议、设备接入、招聘、环境许可、单位合格晶粒资源强度。<sup><a href="#s15">[15]</a></sup></p></article>
+      </div>
+    </section>
+
+    <section id="expert">
+      <p class="kicker">10 · 专家判断框架</p><h2>专家不是相信更少，而是把每个说法放回正确的分母</h2>
+      <p class="scroll-hint">横向滑动查看成熟状态阶梯 →</p>
+      <div class="scrollbox" role="region" aria-label="技术成熟状态阶梯，可横向滚动" tabindex="0"><div class="status-ladder">
+        <div><b>Research</b>实验室演示</div><div><b>Announced</b>路线图或宣布</div><div><b>Sampled</b>送样 / 工程样品</div><div><b>Risk production</b>风险生产</div><div><b>In production</b>进入生产</div><div><b>HVM</b>高量产</div><div><b>Deployed</b>广泛部署与收入</div>
+      </div></div>
+      <div class="takeaway"><strong>状态词不可互换：</strong>厂商文件最可靠地证明“厂商宣布了什么”；要证明跨厂商领先、良率或广泛部署，还需要统一基准、客户数据或独立验证。</div>
+      <p class="scroll-hint">横向滑动查看专家追问 →</p>
+      <div class="scrollbox" role="region" aria-label="常见说法与专家追问，可横向滚动" tabindex="0"><table class="matrix"><thead><tr><th>常见说法</th><th>先分类</th><th>专家追问</th><th>失败信号</th></tr></thead><tbody>
+        <tr><td>“更先进节点，性能提升 20%”</td><td>厂商技术主张</td><td>iso-power 还是 iso-performance？面积、成本、良率、产品负载和成熟状态？</td><td>只报节点名和百分比，无比较基线</td></tr>
+        <tr><td>“AI 芯片快两倍”</td><td>基准结果</td><td>模型、精度、批量、延迟、系统规模、软件版本、功耗和可购买状态？</td><td>峰值 TOPS 代替端到端任务</td></tr>
+        <tr><td>“Chiplet 可自由组合”</td><td>生态愿景</td><td>物理层、协议、封装、PDK、测试、热、认证和责任边界都互操作吗？</td><td>规范发布被写成已大规模多供应商部署</td></tr>
+        <tr><td>“新厂让供应链安全”</td><td>政策目标</td><td>建成、装机、工艺认证、客户认证、良率、材料和人才分别到哪一步？</td><td>把宣布投资或名义 WSPM 当作合格产量</td></tr>
+        <tr><td>“市场规模将在 2026 年达到 X”</td><td>预测 / 情景</td><td>哪个版本、发布日期、实际数据截止、价格假设与产品构成？</td><td>预测不写 vintage，修订后仍混用旧数字</td></tr>
+      </tbody></table></div>
+      <div class="grid" style="margin-top:18px">
+        <article class="card debate"><h3>口径冲突案例：791.7 vs 795.6</h3><p>SIA 2026-02-06 公告基于当时数据给出 2025 年 7917 亿美元；WSTS 2026-03-06 用最终四季度数据更新为 7956 亿美元。两者并非“谁撒谎”，而是数据版本不同；新版应使用最终值并保留修订轨迹。<sup><a href="#s21">[21]</a></sup><sup><a href="#s1">[1]</a></sup></p></article>
+        <article class="card half"><h3>五层证据过滤器</h3><ol class="check"><li><b>科学：</b>机制是否可能，边界条件是什么？</li><li><b>工程：</b>是否重复、基准是否公平？</li><li><b>制造：</b>良率、可靠性、规模与测试？</li><li><b>商业：</b>客户、收入、总拥有成本与现金流？</li><li><b>外部：</b>供应、标准、资源、政策和合规？</li></ol></article>
+        <article class="card half"><h3>四个最值得追踪的领先指标</h3><ol class="check"><li><b>瓶颈移动：</b>交期、利用率、良率、HBM/封装/电力约束。</li><li><b>状态转换：</b>送样→风险生产→HVM→客户收入。</li><li><b>资本效率：</b>Capex 是否变成有客户的合格产能。</li><li><b>替代能力：</b>第二来源是否通过产品、工艺、封装和认证匹配。</li></ol></article>
+      </div>
+    </section>
+
+    <section id="path">
+      <p class="kicker">11 · 从地图到能力</p><h2>2 小时 / 2 天 / 7 天：用 AI 加速，把知识变成可证伪的判断</h2>
+      <div class="grid">
+        <article class="card"><h3>2 小时 · 能复原地图</h3><p>合上页面画出抽象栈和价值链，用自己的话区分器件、ISA、微架构、SoC、节点、裸片与封装；让 AI 逐项追问并暴露概念缺口，再回到本页及原始来源纠正。</p></article>
+        <article class="card"><h3>2 天 · 能完成比较</h3><p>选一个计算芯片和一个模拟/功率芯片，借助 AI 建立比较框架，但亲自核对 PPA、制程、封装、客户认证和商业指标；完成良率敏感性分析，并加入一个推翻初始判断的反例。</p></article>
+        <article class="card"><h3>7 天 · 能独立判断</h3><p>挑一条“突破”新闻建立 claim ledger，写一页技术—商业—政策联动分析；让 AI 扮演工程师、客户和怀疑者进行红队质询，最后只用可追溯的一手证据修订结论。</p></article>
+        <article class="card full"><h3>自测：不查资料，你能把答案连成因果链吗？</h3><ol class="check"><li>为什么 ISA、微架构和制程节点不能互相替代？</li><li>裸片面积增加时，为什么成本可能非线性上升？</li><li>AI 加速器需求旺盛时，瓶颈为什么可能转向 HBM、封装、电力或软件？</li><li>为什么总市场上涨，不代表模拟、分立和工业芯片同步繁荣？</li><li>如何判断一座宣布建设的晶圆厂是否真正提高了供应链韧性？</li><li>“High-NA 已交付”和“High-NA 已广泛量产”之间缺哪些证据？</li></ol><details><summary>查看强答案标准</summary><p>强答案至少连接三层：物理/架构约束 → 制造/良率/封装 → 商业指标/客户价值，并主动指出证据状态、分母、来源激励与可证伪指标。能复述名词是“可对话”；能比较权衡是“可推理”；能识别口径与下一证据是“可评估”。</p></details></article>
+      </div>
+      <div class="takeaway"><strong>你现在应该能解释：</strong>芯片如何从工作负载走到版图与晶圆，良率为何连接物理与经济，不同商业模式为何看不同指标，周期如何被库存和固定成本放大，以及政策、标准和资源为何会重写技术路线。<br><strong>仍需实践：</strong>器件/电路数学、EDA 工具、制程实验、良率工程、封装热设计、客户产品定义、财务建模和真实供应商谈判。</div>
+    </section>
+
+    <section id="sources">
+      <p class="kicker">12 · 分类证据库</p><h2>从原始来源继续，而不是从二手摘要开始</h2>
+      <p class="small">来源条目记录日期、证据类型与立场。公司资料用于证明公司披露与产品状态；行业协会用于统计和标准；政府资料用于规则、项目与公共数据；预测均不作为事实。</p>
+      <div class="source-group"><h3>市场、价值链与商业</h3><ol class="source-list">
+        <li value="1" id="s1"><a href="https://www.wsts.org/esraCMS/extension/media/f/WST/7495/WSTS-Q4-Release-2025_-_06-Mar-2026.pdf">Global Semiconductor Market grows 26% in 2025 to $796 billion</a><span>WSTS · 2026-03-06 · 最终行业销售数据 · 行业协会视角。</span></li>
+        <li value="2" id="s2"><a href="https://www.oecd.org/en/publications/mapping-the-semiconductor-value-chain_4154cdbf-en.html">Mapping the semiconductor value chain</a><span>OECD · 2025-06-24 · 政策研究 / 贸易与投入产出数据 · 公共机构。</span></li>
+        <li value="9" id="s9"><a href="https://investor.tsmc.com/static/annualReports/2025/english/index.html">TSMC 2025 Annual Report</a><span>TSMC · 2026-04-16 · 公司年报 · 厂商视角；用于 N2 状态、收入结构与商业模式。</span></li>
+        <li value="10" id="s10"><a href="https://www.asml.com/en/investors/annual-report/2025/financials">ASML 2025 Annual Report — Financials</a><span>ASML · 2026-02-25 · 公司年报 · 厂商视角；用于收入、毛利、研发与服务业务。</span></li>
+        <li value="11" id="s11"><a href="https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-07/6f49632674bd2d0fd48cb65aaf89ec6ab510b559/2Q26%20ManagementReport.pdf">TSMC 2Q26 Management Report</a><span>TSMC · 2026-07-16 · 季度公司披露 · 厂商视角；用于节点与平台收入结构。</span></li>
+        <li value="21" id="s21"><a href="https://www.semiconductors.org/global-annual-semiconductor-sales-increase-25-6-to-791-7-billion-in-2025/">Global Annual Semiconductor Sales Increase 25.6% to $791.7B</a><span>SIA · 2026-02-06 · 较早行业统计公告 · 行业协会立场；用于展示数据修订。</span></li>
+        <li value="23" id="s23"><a href="https://www.oecd.org/en/publications/promoting-the-development-of-the-semiconductor-ecosystem-in-mexico_02c81dec-en/full-report/understanding-the-semiconductor-value-chain_58b33686.html">Understanding the semiconductor value chain</a><span>OECD · 2026-02-27 · 价值链与商业模式综合 · 公共机构；聚合价值份额为估计。</span></li>
+        <li value="24" id="s24"><a href="https://www.sec.gov/Archives/edgar/data/97476/000009747626000080/ti2025ars.pdf">Texas Instruments 2025 Annual Report</a><span>TI / SEC · 2026-02-06 · 公司年报 · 厂商视角；用于固定成本、周期与模拟/嵌入式护城河。</span></li>
+      </ol></div>
+      <div class="source-group"><h3>技术、制造、标准与前沿</h3><ol class="source-list" start="3">
+        <li value="3" id="s3"><a href="https://www.asml.com/en/en/technology/all-about-microchips/how-microchips-are-made">How microchips are made</a><span>ASML · 持续更新 · 制造流程科普 · 设备厂商视角。</span></li>
+        <li value="4" id="s4"><a href="https://docs.riscv.org/reference/isa/v20240411/unpriv/intro.html">RISC-V Unprivileged ISA — Introduction</a><span>RISC-V International · 2024-04-11 · 正式 ISA 规范 · 标准组织。</span></li>
+        <li value="5" id="s5"><a href="https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts/blob/master/docs/user/UserGuide.md">OpenROAD Flow Scripts User Guide</a><span>OpenROAD Project · 访问于 2026-08-08 · 开源数字设计流程文档 · 工程项目。</span></li>
+        <li value="6" id="s6"><a href="https://arxiv.org/abs/1911.02549">MLPerf Inference Benchmark</a><span>Reddi et al. · 2019-11-06 · 基准论文 · 多机构研究；用于公平性能比较框架。</span></li>
+        <li value="7" id="s7"><a href="https://nvlpubs.nist.gov/nistpubs/ir/2025/NIST.IR.8577.pdf">Semiconductors and Microelectronics Standards Working Group Annual Report for 2024</a><span>NIST · 2025-05-20 · 政府技术报告；用于先进封装、量测、测试和可靠性缺口。</span></li>
+        <li value="8" id="s8"><a href="https://www.uciexpress.org/specifications">UCIe Specifications</a><span>UCIe Consortium · 更新至 2025-08-05 · 行业标准 · 联盟视角；规范不等于采用证明。</span></li>
+        <li value="17" id="s17"><a href="https://investors.micron.com/news-releases/news-release-details/micron-high-volume-production-hbm4-designed-nvidia-vera-rubin">Micron in High-Volume Production of HBM4</a><span>Micron · 2026-03-16 · 公司产品公告 · 厂商自报；性能基于内部测试。</span></li>
+        <li value="18" id="s18"><a href="https://ourbrand.asml.com/asset/d5e933d7-78d0-406c-aed7-a46626e63381/2026_-AGM-_presentation.pdf">ASML 2026 AGM Presentation</a><span>ASML · 2026-04-22 · 公司演示 · 厂商视角；High-NA 未来导入含前瞻陈述。</span></li>
+        <li value="19" id="s19"><a href="https://irds.ieee.org/images/files/pdf/2024/2024IRDS_MM.pdf">2024 IRDS More Moore</a><span>IEEE IRDS · 2024 · 技术路线图 · 多方专家预测；用于 GAA、背面供电和后续器件方向。</span></li>
+        <li value="25" id="s25"><a href="https://newsroom.intel.com/intel-foundry/intel-foundry-details-process-milestones-future-innovation-at-vlsi-symposium">Intel Foundry process milestones at VLSI 2026</a><span>Intel · 2026-06-16 · 厂商技术公告；用于 18A/18A-P 状态，不能跨厂直接比较。</span></li>
+        <li value="27" id="s27"><a href="https://www.nist.gov/publications/summary-report-chips-rd-standardization-readiness-level-workshop">CHIPS R&amp;D Standardization Readiness Level Workshop</a><span>NIST · 2026-03-11 · 政府标准化报告；用于“规范发布≠生态成熟”。</span></li>
+      </ol></div>
+      <div class="source-group"><h3>政策、韧性与环境</h3><ol class="source-list" start="12">
+        <li value="12" id="s12"><a href="https://www.bis.gov/press-release/commerce-strengthens-export-controls-restrict-chinas-capability-produce-advanced-semiconductors-military">Commerce strengthens advanced-semiconductor export controls</a><span>U.S. BIS · 2024-12-02 · 监管公告 · 实施政府视角；证明规则内容，不证明效果。</span></li>
+        <li value="13" id="s13"><a href="https://www.gao.gov/products/gao-26-107882">Semiconductors: Information on Projects Funded to Strengthen U.S. Supply Chain</a><span>U.S. GAO · 2025-12-11 · 审计/项目状态报告 · 政府监督机构。</span></li>
+        <li value="14" id="s14"><a href="https://www.oecd.org/en/publications/the-chip-landscape_02dbd028-en/full-report.html">The chip landscape: Geographical distribution of wafer fabrication capacity</a><span>OECD · 2025-12-01 · 晶圆产能数据库与政策分析 · 公共机构；WSPM 不含良率。</span></li>
+        <li value="15" id="s15"><a href="https://www.nist.gov/system/files/documents/2024/06/28/Final%20PEA%20for%20Modernization%20and%20Expansion%20of%20Semiconductor%20Fabs%206-28-2024%20-%20OGC-508C.pdf">Programmatic Environmental Assessment for Semiconductor Fabs</a><span>NIST · 2024-06-28 · 环境评估 · 美国样本；用于水、电、废水和建设约束。</span></li>
+        <li value="16" id="s16"><a href="https://www.epa.gov/eps-partnership/semiconductor-industry">Semiconductor Industry — Fluorinated GHGs</a><span>U.S. EPA · 更新于 2026 · 监管/排放资料 · 美国政府。</span></li>
+        <li value="20" id="s20"><a href="https://pubs.usgs.gov/publication/mcs2026">Mineral Commodity Summaries 2026</a><span>USGS · 2026-02-06 · 矿产统计 · 美国政府；镓口径为原生低纯度产量。</span></li>
+        <li value="26" id="s26"><a href="https://www.epa.gov/stationary-sources-air-pollution/semiconductor-manufacturing-national-emission-standards-hazardous">Semiconductor Manufacturing NESHAP</a><span>U.S. EPA · 更新于 2026-03-04 · 有害空气污染物监管资料 · 美国政府。</span></li>
+      </ol></div>
+    </section>
+  </main>
+  <footer class="shell">这是一张专家级导航地图，不是从业资格证，也不是投资建议。真正的专业能力来自持续用原始数据、工程约束、客户反馈和可证伪指标修正模型。</footer>
+  <script>
+    const progress=document.getElementById('progress');
+    const navLinks=[...document.querySelectorAll('nav a')];
+    function updateProgress(){const d=document.documentElement;const max=d.scrollHeight-d.clientHeight;progress.style.width=(max?d.scrollTop/max*100:0)+'%'}
+    addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+    const observer=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting){navLinks.forEach(a=>a.setAttribute('aria-current',a.hash==='#'+e.target.id?'true':'false'))}}},{rootMargin:'-15% 0px -72% 0px'});
+    document.querySelectorAll('main section').forEach(s=>observer.observe(s));
+    const dieArea=document.getElementById('dieArea'),defects=document.getElementById('defects'),waferCost=document.getElementById('waferCost');
+    function calc(){const a=+dieArea.value,d=+defects.value,w=+waferCost.value,r=150;const dies=Math.max(1,Math.floor(Math.PI*r*r/a-Math.PI*2*r/Math.sqrt(2*a)));const y=Math.exp(-(a/100)*d);const good=Math.max(1,dies*y);document.getElementById('dieAreaOut').textContent=a+' mm²';document.getElementById('defectsOut').textContent=d.toFixed(2)+' /cm²';document.getElementById('waferCostOut').textContent='$'+w.toLocaleString('en-US');document.getElementById('diesOut').textContent=dies.toLocaleString('zh-CN');document.getElementById('yieldOut').textContent=(y*100).toFixed(1)+'%';document.getElementById('goodOut').textContent=Math.round(good).toLocaleString('zh-CN');document.getElementById('costOut').textContent='$'+Math.round(w/good).toLocaleString('en-US')}
+    [dieArea,defects,waferCost].forEach(x=>x.addEventListener('input',calc));calc();
+  </script>
+</body>
+</html>

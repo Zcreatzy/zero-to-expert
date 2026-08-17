@@ -16,6 +16,13 @@ Instead of assembling search results into an encyclopedia-like article, it first
 
 > “Zero to Expert” means acquiring an expert-grade map, vocabulary, and evaluation framework. It does not replace years of research, engineering, commercial, or regulatory practice.
 
+### Demo
+
+Explore the semiconductor-industry atlas generated with this Skill. Both files contain the same structure, evidence cutoff, citations, interactive yield model, and responsive visual system.
+
+- [Open the English semiconductor-industry demo](demos/semiconductor-industry-en.html)
+- [打开中文芯片行业 Demo](demos/semiconductor-industry-zh.html)
+
 ### What it does
 
 - **Selects the right lens**: academic, technology–industry, or a deliberately composed mixed route.
