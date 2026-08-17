@@ -80,7 +80,7 @@ Introduce every technical term before using it. Pair abstraction with one concre
 - Use [assets/html-blueprint.html](assets/html-blueprint.html) as a component and styling reference; adapt the structure to the topic rather than filling it mechanically.
 - Match the user's language. On first use, include the standard English term when it improves transfer to literature or industry discourse.
 - Keep the hero `<h1>` short and label-like, not sentence-like: no more than 12 CJK characters (excluding punctuation and spaces) or 8 words in space-delimited languages. Move the explanatory thesis into the lede below it.
-- Make the main shell fluid on desktop and ultrawide screens instead of constraining it to a narrow centered column. Use nearly the full viewport with total horizontal gutter clamped to roughly 12–48 px; constrain the line length of prose inside the shell rather than imposing a 1200 px page-wide maximum.
+- Keep the main shell centered with visible breathing room. Use a generous desktop maximum width around 1720 px plus a responsive total horizontal gutter of roughly 32–96 px; do not make the page edge-to-edge, and do not fall back to a narrow 1200 px column on ultrawide screens. Constrain prose line length inside the shell separately.
 - Create a single standalone `.html` file with inline CSS and minimal inline JavaScript. Do not require a build step, CDN, external font, or remote image to understand the page.
 - Make it responsive and accessible: semantic landmarks, visible focus states, high contrast, reduced-motion support, keyboard-safe controls, useful link text, and readable mobile layout.
 - Meet the selected mode's content, source, and visual budgets. Choose information-bearing visuals for the topic, not decoration:
