@@ -16,7 +16,7 @@
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--paper);color:var(--ink);line-height:1.65}
     a{color:var(--accent);text-underline-offset:.18em} a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     .progress{position:fixed;inset:0 auto auto 0;width:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:20}
-    .shell{width:min(1240px,calc(100% - 16px));margin:auto}.hero{padding:72px 0 36px}.eyebrow,.tag{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .shell{width:calc(100% - clamp(12px,1.5vw,48px));margin:auto}.hero{padding:72px 0 36px}.eyebrow,.tag{font-size:.75rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
     h1{font-size:clamp(2.5rem,7vw,6rem);line-height:.95;letter-spacing:-.06em;max-width:18ch;margin:.18em 0}h2{font-size:clamp(1.65rem,3vw,2.55rem);letter-spacing:-.035em;line-height:1.1;margin:.2em 0 .8em}h3{line-height:1.2}
     .lede{max-width:64ch;font-size:1.14rem;color:var(--muted)}.meta{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0}.tag{border:1px solid var(--line);border-radius:99px;padding:5px 10px;background:var(--card)}
     nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-block:1px solid var(--line);overflow:auto;white-space:nowrap}nav .shell{display:flex;gap:20px;padding-block:12px}nav a{text-decoration:none;font-weight:700;font-size:.9rem}
@@ -30,7 +30,7 @@
     details{border-top:1px solid var(--line);padding:14px 0}summary{cursor:pointer;font-weight:800}.legend{display:flex;gap:9px;flex-wrap:wrap}.legend span{padding:4px 9px;border-radius:7px;background:var(--card);border:1px solid var(--line);font-size:.78rem;font-weight:800}
     .foundation{border-color:var(--accent)}.current{border-color:#2877b5}.frontier{border-color:var(--gold)}.debate{border-color:var(--accent2)}.inference{border-style:dashed}
     .quiz label{display:block;margin:9px 0}.answer{color:var(--muted)}footer{padding:40px 0 80px;color:var(--muted)}
-    @media(max-width:760px){.card,.wide{grid-column:1/-1}.hero{padding-top:48px}.timeline{grid-template-columns:90px 1fr}.shell{width:min(100% - 11px,1240px)}h1{overflow-wrap:anywhere}.flow{padding-bottom:18px}}
+    @media(max-width:760px){.card,.wide{grid-column:1/-1}.hero{padding-top:48px}.timeline{grid-template-columns:90px 1fr}h1{overflow-wrap:anywhere}.flow{padding-bottom:18px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
     @media print{nav,.progress{display:none}.shell{width:100%}.card{box-shadow:none;break-inside:avoid}a{color:inherit}.hero{padding-top:0}}
   </style>
