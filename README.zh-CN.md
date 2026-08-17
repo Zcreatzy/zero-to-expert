@@ -16,6 +16,13 @@
 
 > “Zero to Expert” 指获得专家级的知识地图、词汇体系和判断框架，并不等同于替代长期的研究、工程或行业实践。
 
+### Demo 示例
+
+查看由本 Skill 生成的芯片行业图谱。中英文文件具有相同的内容结构、证据截止日期、引用、交互式良率模型和响应式视觉系统。
+
+- [打开中文芯片行业 Demo](demos/semiconductor-industry-zh.html)
+- [Open the English semiconductor-industry demo](demos/semiconductor-industry-en.html)
+
 ### 核心能力
 
 - **自动选择分析框架**：区分学术、技术产业和混合主题，避免用同一套目录生搬硬套所有领域。
