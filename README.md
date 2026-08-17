@@ -14,7 +14,7 @@
 
 ## 中文
 
-`zero-to-expert` 是一个 Codex Skill，用来帮助具有理工科本科基础、但对目标领域没有专业知识的读者，快速建立从入门到专家视角的完整认知地图。
+`zero-to-expert` 是一个基于开放 `SKILL.md` 格式的跨平台 Agent Skill，可用于 Codex、Claude Code、OpenCode、WorkBuddy 及其他兼容 Agent Skills 的工具。它帮助具有理工科本科基础、但对目标领域没有专业知识的读者，快速建立从入门到专家视角的完整认知地图。
 
 它不会把搜索结果堆成一篇百科文章，而是先判断主题更偏向**学术研究**、**技术产业**还是**混合领域**，再围绕关键问题、因果机制、系统结构、重要争议、最新进展和专家判断方法，生成一份可独立阅读的单文件 HTML 图谱。
 
@@ -81,26 +81,46 @@
 
 混合主题会选择其中一个作为主线，并嵌入另一框架中真正必要的模块。
 
-### 安装
+### 兼容平台与安装
 
-将仓库克隆到 Codex 的 Skills 目录：
+核心 Skill 不依赖 Codex 专有功能。`SKILL.md`、`references/` 和 `assets/` 可被兼容 Agent Skills 的工具直接使用；`agents/openai.yaml` 仅提供 Codex 的界面元数据，其他平台会忽略它。
+
+| 平台 | 用户级安装位置或方式 | 调用方式 |
+|---|---|---|
+| Codex | `~/.codex/skills/zero-to-expert/` | `$zero-to-expert` 或自然语言自动触发 |
+| Claude Code | `~/.claude/skills/zero-to-expert/` | `/zero-to-expert` 或自动触发 |
+| OpenCode | `~/.config/opencode/skills/zero-to-expert/` | 自然语言触发或通过 Skill 工具加载 |
+| WorkBuddy | 在“专家・技能・连接器”中导入本地 Skill 包 | 在对话中选择、召唤或自动触发 |
+
+Lite 模式在所有平台都只使用当前 Agent。Full 模式会在平台提供多 Agent 能力时并行使用最多三个研究 Agent；如果平台没有该能力，则顺序执行相同的多视角研究分工。
+
+选择你的平台目录执行安装：
 
 ```bash
+# Codex
 mkdir -p ~/.codex/skills
 git clone https://github.com/Zcreatzy/zero-to-expert.git ~/.codex/skills/zero-to-expert
+
+# Claude Code
+mkdir -p ~/.claude/skills
+git clone https://github.com/Zcreatzy/zero-to-expert.git ~/.claude/skills/zero-to-expert
+
+# OpenCode
+mkdir -p ~/.config/opencode/skills
+git clone https://github.com/Zcreatzy/zero-to-expert.git ~/.config/opencode/skills/zero-to-expert
 ```
 
-如果已经安装，可以这样更新：
+OpenCode 也兼容 `~/.claude/skills` 和 `~/.agents/skills`，因此可以与其他工具共享同一份安装。WorkBuddy 推荐通过技能管理界面导入本仓库目录或打包文件；支持工作区 Skill 的版本也可放入 `.codebuddy/skills/zero-to-expert/`。
+
+更新时，在实际安装目录执行：
 
 ```bash
-git -C ~/.codex/skills/zero-to-expert pull
+git -C <你的安装目录>/zero-to-expert pull
 ```
-
-重新打开 Codex 或开始一个新任务后，即可通过 `$zero-to-expert` 调用。
 
 ### 使用方法
 
-最简提示词：
+最简提示词（示例使用 Codex 调用语法；其他平台可直接写“使用 zero-to-expert”）：
 
 ```text
 用 $zero-to-expert 帮我了解芯片行业
@@ -149,7 +169,7 @@ git -C ~/.codex/skills/zero-to-expert pull
 ```text
 zero-to-expert/
 ├── SKILL.md                              # 核心工作流与交付标准
-├── agents/openai.yaml                    # Codex 中显示的名称和默认提示词
+├── agents/openai.yaml                    # 可选的 Codex 界面元数据
 ├── assets/html-blueprint.html            # 响应式 HTML 组件与样式参考
 └── references/
     ├── modes.md                           # Lite / Full 预算和停止规则
@@ -170,7 +190,7 @@ zero-to-expert/
 
 ## English
 
-`zero-to-expert` is a Codex Skill for readers with a STEM bachelor's-level background who need a coherent map of an unfamiliar field without already knowing its specialist vocabulary.
+`zero-to-expert` is a cross-platform Agent Skill built on the open `SKILL.md` format. It works with Codex, Claude Code, OpenCode, WorkBuddy, and other Agent Skills-compatible tools. It is designed for readers with a STEM bachelor's-level background who need a coherent map of an unfamiliar field without already knowing its specialist vocabulary.
 
 Instead of assembling search results into an encyclopedia-like article, it first classifies the topic as **academic**, **technology–industry**, or **mixed**. It then builds a standalone visual HTML atlas around governing questions, causal mechanisms, system structure, major debates, current developments, and the judgment methods experts use.
 
@@ -237,26 +257,46 @@ It emphasizes:
 
 A mixed topic uses one route as the narrative spine and inserts only the necessary modules from the other.
 
-### Installation
+### Compatible platforms and installation
 
-Clone the repository into your Codex Skills directory:
+The core Skill does not depend on Codex-specific behavior. Compatible Agent Skills runtimes can use `SKILL.md`, `references/`, and `assets/` directly. `agents/openai.yaml` only supplies optional Codex UI metadata and can be ignored by other platforms.
+
+| Platform | User-level location or method | Invocation |
+|---|---|---|
+| Codex | `~/.codex/skills/zero-to-expert/` | `$zero-to-expert` or automatic natural-language selection |
+| Claude Code | `~/.claude/skills/zero-to-expert/` | `/zero-to-expert` or automatic selection |
+| OpenCode | `~/.config/opencode/skills/zero-to-expert/` | Natural-language selection or the Skill tool |
+| WorkBuddy | Import a local Skill package from Experts・Skills・Connectors | Select, invoke, or let WorkBuddy trigger it automatically |
+
+Lite always uses the current agent only. In Full mode, the Skill uses up to three research agents when the runtime supports multi-agent execution; otherwise, it runs the same perspective lanes sequentially.
+
+Clone the repository into the directory for your platform:
 
 ```bash
+# Codex
 mkdir -p ~/.codex/skills
 git clone https://github.com/Zcreatzy/zero-to-expert.git ~/.codex/skills/zero-to-expert
+
+# Claude Code
+mkdir -p ~/.claude/skills
+git clone https://github.com/Zcreatzy/zero-to-expert.git ~/.claude/skills/zero-to-expert
+
+# OpenCode
+mkdir -p ~/.config/opencode/skills
+git clone https://github.com/Zcreatzy/zero-to-expert.git ~/.config/opencode/skills/zero-to-expert
 ```
 
-To update an existing installation:
+OpenCode also discovers `~/.claude/skills` and `~/.agents/skills`, so one installation can be shared with another tool. For WorkBuddy, import this repository directory or a packaged copy through the Skill management UI. Editions that support workspace Skills can also use `.codebuddy/skills/zero-to-expert/`.
+
+To update, run this command with the directory you actually installed into:
 
 ```bash
-git -C ~/.codex/skills/zero-to-expert pull
+git -C <your-install-directory>/zero-to-expert pull
 ```
-
-Reopen Codex or start a new task, then invoke the Skill with `$zero-to-expert`.
 
 ### Usage
 
-Minimal prompt:
+Minimal prompt (shown with Codex invocation syntax; on another platform, simply say “use zero-to-expert”):
 
 ```text
 Use $zero-to-expert to help me understand the semiconductor industry.
@@ -305,7 +345,7 @@ A typical atlas includes:
 ```text
 zero-to-expert/
 ├── SKILL.md                              # Core workflow and delivery contract
-├── agents/openai.yaml                    # Codex display metadata and default prompt
+├── agents/openai.yaml                    # Optional Codex UI metadata
 ├── assets/html-blueprint.html            # Responsive HTML component/style reference
 └── references/
     ├── modes.md                           # Lite / Full budgets and stopping rules
